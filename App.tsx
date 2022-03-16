@@ -9,9 +9,14 @@ import theme from './src/global/styles/theme';
 import { NavigationContainer } from '@react-navigation/native';
 import { AppRoutes } from './src/routes/app.routes'
 
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR';
+
 export default function App() {
 	const [fontsLoaded] = useFonts({
-		Poppins_400Regular, Poppins_500Medium, Poppins_700Bold
+		Poppins_400Regular,
+		Poppins_500Medium,
+		Poppins_700Bold,
 	});
 
 	if (!fontsLoaded)
@@ -20,6 +25,7 @@ export default function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<StatusBar style="light" translucent />
+
 			<NavigationContainer>
 				<AppRoutes />
 			</NavigationContainer>
